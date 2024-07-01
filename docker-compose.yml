@@ -1,0 +1,10 @@
+version: "3"
+services:
+  app:
+    container_name: oroshi_api
+    build: .
+    ports:
+      - "3030:5000"
+    volumes:
+      - ./app:/usr/src/app
+    command: flask run --host=0.0.0.0
