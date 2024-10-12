@@ -1,3 +1,4 @@
 flask==3.0.3
 googletrans==4.0.0rc1
 pytest==8.3.2
+lingua-language-detector==2.0.2
