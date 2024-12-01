@@ -9,4 +9,4 @@ services:
       - "3030:5000"
     volumes:
       - ./app:/usr/src/app
-    command: flask run --host=0.0.0.0 --debugger --reload
+    # command: flask run --host=0.0.0.0 --debugger --reload
