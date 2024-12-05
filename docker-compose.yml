@@ -2,11 +2,16 @@ version: "3"
 services:
   app:
     container_name: oroshi_api
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     environment:
       FLASK_ENV: development
     ports:
-      - "3030:5000"
+      - "3030:3030"
     volumes:
-      - ./app:/usr/src/app
-    command: flask run --host=0.0.0.0 --debugger --reload
+      - .:/workspace
+    command: gunicorn wsgi:oroshi_api --config gunicorn_config.py
+    # command: gunicorn --reload -w 1 --bind 0.0.0.0:3030 --chdir /workspace/app wsgi:oroshi_api
+
+    tty: true
