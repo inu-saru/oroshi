@@ -1,7 +1,7 @@
 FROM python:3.12.4-slim
-WORKDIR /usr/src/app
+WORKDIR /workspace
 ENV FLASK_APP=app
-COPY /app/requirements.txt ./
+COPY requirements.txt /workspace
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 RUN pip install -U pip setuptools wheel
